@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Everything You Need</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Everything You Need<span class="nt">nt</span><sup>*</sup></h1>
+      <p class="fine">*to not need. Advice not guaranteed to be advice. Not a dictionary. Not a doctor. Possibly a pigeon.</p>
+    </header>
+
+    <form id="form" autocomplete="off">
+      <label class="prompt" for="q">
+        <span class="chevron">&gt;</span>
+        <span class="line"><span id="mirror"></span><span class="cursor">▌</span></span>
+        <input id="q" autofocus spellcheck="false" aria-label="Describe your situation" enterkeyhint="go">
+      </label>
+    </form>
+    <p class="hint">describe your predicament and press enter</p>
+    <p class="try">try:
+      <button type="button" data-try="stuck in an elevator">stuck in an elevator</button>
+      <button type="button" data-try="climbing a mountain">climbing a mountain</button>
+      <button type="button" data-try="a bear is in my tent">a bear is in my tent</button>
+      <button type="button" data-try="phone on 1% battery">phone on 1% battery</button>
+    </p>
+
+    <p class="loading" id="loading" hidden></p>
+
+    <article class="entry" id="entry" hidden>
+      <div class="headword">
+        <span id="word"></span>
+        <span class="pron" id="pron"></span>
+        <em class="pos" id="pos"></em>
+      </div>
+      <div class="body">
+        <figure class="sticker" id="sticker">
+          <img id="stickerImg" alt="" hidden>
+          <div class="sticker-face" id="stickerFace" aria-hidden="true"></div>
+          <figcaption>
+            <span class="ml" id="stickerMl" lang="ml"></span>
+            <span class="mg" id="stickerMg"></span>
+          </figcaption>
+          <p class="sticker-src" id="stickerSrc"></p>
+        </figure>
+        <ol id="defs"></ol>
+      </div>
+      <p class="see">Try also: <em id="see"></em></p>
+      <div class="actions">
+        <button type="button" id="again">Get a second opinion</button>
+        <button type="button" id="yes">Helpful</button>
+        <button type="button" id="no">Not helpful</button>
+        <button type="button" id="copy">Copy</button>
+      </div>
+      <p class="toast" id="toast"></p>
+    </article>
+
+    <footer class="fine">
+      All advice is useless by design. In a real emergency, please call your local emergency number.
+      Do not take advice from websites with a blinking cursor.
+    </footer>
+  </main>
+
+  <button type="button" class="hq-btn" id="hqBtn">Site not working? Contact the core team</button>
+
+  <dialog id="hq" aria-label="Contact the core team">
+    <button type="button" class="hq-close" id="hqClose" aria-label="Close">×</button>
+    <div class="bird" id="bird" aria-hidden="true">🐦</div>
+    <p class="hq-status" id="hqStatus"></p>
+    <form id="hqForm" hidden>
+      <textarea id="hqMsg" rows="3" placeholder="Your message for HQ (keep it light, it's a small bird)"></textarea>
+      <button type="submit">Tie message to bird</button>
+    </form>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="hq.js"></script>
+</body>
+</html>
